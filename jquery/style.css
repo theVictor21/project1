@@ -1,0 +1,320 @@
+@charset "UTF-8";
+
+
+
+
+/*body {
+        margin: 5px;
+        padding: 0px;
+		background-color:#999;
+      }
+	  #container {
+        border: 1px solid #9C9898;
+      }
+	  #buttons {
+        position: absolute;
+        top: 300px;
+        left: 10px;
+      }*/
+      
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+}
+.txtClass{
+    font-size: 16px;
+}
+
+
+#container {
+    display: inline-block;
+    overflow: hidden;
+    height: 500px;
+    width: 900x;
+    border: 1px solid #9C9898;
+    background-color:#FFF;
+}
+      
+/* dialog style */
+.ui-dialog-contain {
+	width: 100%;
+	max-width: 900px;
+	margin: 5% auto 15px auto;
+	padding: 0;
+	position: relative;
+	top: -15px;
+}
+
+
+
+
+
+.roundedDivbox{
+  clear:both;
+  text-align:left;
+  padding-top: 20px;
+  padding-bottom: 12px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color:#fff;
+  margin:0 auto;
+  border-radius: 8px;
+  border-style: solid;
+  border-width:thin;
+  border-color: #c0c0c0;
+}
+
+/*.twoColDivBox{
+  float:left;
+  max-width: 550px;
+  padding: 10px;
+  text-align:left;
+}*/
+
+/*.boxDiv{
+  padding: 3px;
+  margin-top: 10px;
+  text-align: center;
+}*/
+
+.centerBox{
+    width: 600px;
+    text-align: right;
+}
+
+
+
+
+
+.ui-block-a.twoCol {
+	padding:20px;
+}
+.ui-block-b.twoCol {
+	padding:20px;
+}
+
+.ui-grid-b > .ui-block-a.a { width: 25% }
+.ui-grid-b > .ui-block-b.b { width: 50%; }
+.ui-grid-b > .ui-block-c.c { width: 25%; } 
+
+
+/*
+.ui-grid-a > .ui-block-a.a2 { width: 28% }
+.ui-grid-a > .ui-block-b.b2 { width: 72% }
+
+.ui-grid-a > .ui-block-b.b2  >.ui-grid-c.c3  .ui-block-a.a3 { width: 38% }
+.ui-grid-a > .ui-block-b.b2  >.ui-grid-c.c3  .ui-block-b.b3 { width: 35% }
+.ui-grid-a > .ui-block-b.b2  >.ui-grid-c.c3  .ui-block-c.c3 { width: 12% }
+.ui-grid-a > .ui-block-b.b2  >.ui-grid-c.c3  .ui-block-d.d3 { width: 15% }
+
+.ui-grid-a > .ui-block-a.a4 { width: 60% }
+.ui-grid-a > .ui-block-b.b4 { width: 40%; text-align: right; }
+
+.ui-grid-a > .ui-block-a.a4 > .ui-grid-c.c5 {
+    height: 28px;
+    font-size: 15px;
+    font-weight:bold;
+    text-align: center; 
+    background-color: #fff; 
+    padding-top: 8px;
+    margin-top: 0px;
+    border-radius: 12px;
+    border-style: solid;
+    border-width:thin;
+    border-color: #c0c0c0;
+}
+.ui-grid-a > .ui-block-a.a4 > .ui-grid-c.c5 > .ui-block-a.a5{ width: 20%; border-style: solid; border-right: thin solid #c0c0c0; }
+.ui-grid-a > .ui-block-a.a4 > .ui-grid-c.c5 > .ui-block-b.b5{ width: 20%; border-style: solid; border-right: thin solid #c0c0c0; }
+.ui-grid-a > .ui-block-a.a4 > .ui-grid-c.c5 > .ui-block-c.c5{ width: 20%; border-style: solid; border-right: thin solid #c0c0c0; }
+.ui-grid-a > .ui-block-a.a4 > .ui-grid-c.c5 > .ui-block-d.d5{ width: 40% }
+
+.ui-grid-a > .ui-block-b.b4 > .ui-grid-b.b5 {
+    height: 28px;
+    font-size: 15px;
+    font-weight:bold;
+    text-align: center; 
+    background-color: #fff; 
+    padding-top: 8px;
+    margin-top: 0px;
+    border-radius: 12px;
+    border-style: solid;
+    border-width:thin;
+    border-color: #c0c0c0;
+}
+
+.ui-grid-a > .ui-block-b.b4 > .ui-grid-b.b5 > .ui-block-a.a5{ width: 30%; border-style: solid; border-right: thin solid #c0c0c0; }
+.ui-grid-a > .ui-block-b.b4 > .ui-grid-b.b5 > .ui-block-b.b5{ width: 30%; border-style: solid; border-right: thin solid #c0c0c0; }
+.ui-grid-a > .ui-block-b.b4 > .ui-grid-b.b5 > .ui-block-c.c5{ width: 40% }
+*/
+
+#popupPanel-popup {
+    right: 0 !important;
+    left: auto !important;
+}
+#popupPanel {
+    width: 250px;
+    border: 1px solid #000;
+    border-right: none;
+    background: rgba(0,0,0,.7);
+    margin: -1px 0;
+}
+#popupPanel .ui-btn {
+    /*margin: 2em 15px;*/
+}
+
+@media ( min-width: 40em ) {
+	/* Show the table header rows and set all cells to display: table-cell */
+	.my-custom-breakpoint td,
+	.my-custom-breakpoint th,
+	.my-custom-breakpoint tbody th,
+	.my-custom-breakpoint tbody td,
+	.my-custom-breakpoint thead td,
+	.my-custom-breakpoint thead th {
+		display: table-cell;
+		margin: 0;
+	}
+	/* Hide the labels in each cell */
+	.my-custom-breakpoint td .ui-table-cell-label,
+	.my-custom-breakpoint th .ui-table-cell-label {
+		display: none;
+	}
+}
+
+#printSize {
+	width: 1400px;
+}
+
+.dayLbl {
+	clear:both;
+  	padding-top: 15px;
+  	text-align:left;
+    	border-color: #111;
+	font-size: 20px;
+	text-shadow: none;
+}
+
+.dataBox {
+	float:left;
+  	width: 135px;
+	height: 43px;
+  	padding: 1px;
+  	text-align:left;
+	background-color: #fff;
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #111;
+	font-size: 13px;
+	text-shadow: none;
+}
+
+.dataBoxSu {
+	float:left;
+  	width: 135px;
+	height: 43px;
+  	padding: 1px;
+  	text-align:left;
+	background-color: #EBB931;
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #111;
+	font-size: 13px;
+	text-shadow: none;
+}
+
+.dataBoxRed {
+	float:left;
+  	width: 135px;
+	height: 43px;
+  	padding: 1px;
+  	text-align:left;
+	background-color: #FF0000;
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #111;
+	font-size: 13px;
+	text-shadow: none;
+	color: #fff;
+}
+
+.totalBox {
+	float:left;
+  	width: 5px;
+	height: 15px;
+  	padding: 15px 10px;
+  	text-align:left;
+	vertical-align: center;
+	background-color: #fff;
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #111;
+	font-size: 13px;
+	text-shadow: none;
+}
+
+/*table.heijunkaTable td{
+	background-color: #fff;
+	color: #000;
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #111;
+	padding: 5px 3px;
+	font-size: 13px;
+	text-shadow: none;
+	word-wrap:break-word;
+}
+
+#saturdayTbl td{
+	background-color: #FF0000;
+	color: #fff;
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #111;
+	padding: 10px 10px;
+	text-shadow: none;
+}*/
+
+table.scheduleListTable {
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #111;
+}
+table.scheduleListTable th {
+	padding: 4px 4px;
+	font-size: 13px;
+	text-shadow: none;
+}
+table.scheduleListTable td{
+	background-color: #fff;
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #111;
+	padding: 4px 4px;
+	text-shadow: none;
+	font-size: 13px;
+}
+
+
+table.tableCss {
+    width:90%;
+    /*background-color: #bbd9ee;*/
+    background-color: #fff;
+}
+table.tableCss th {
+    padding: 3px 3px;
+    vertical-align: middle;
+    text-align: center;
+    color: #ffffff;
+    background-color: #666666;
+    font-size: 13px;
+	text-shadow: none;
+}
+table.tableCss td {
+   	padding: 3px 1px;
+   	vertical-align: middle;
+   	text-align: center;
+    	font-size: 13px;
+	text-shadow: none;
+	border-style: solid;
+   	border-width:thin;
+    	border-color: #333333;
+}

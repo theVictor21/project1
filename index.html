@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
+        <!--link rel="stylesheet" type="text/css" href="css/index.css" /-->
+        
+        
+        
+        
+        
+        <script src="jquery/jquery-1.11.0.min.js"></script>
+        <link rel="stylesheet" href="jquery/jquery.mobile-1.4.2.min.css" />
+        <script src="jquery/jquery.mobile-1.4.2.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="jquery/style.css"  />
+        
+        <script>
+            
+            // Wait for device API libraries to load
+            //
+            function onLoad() {
+				console.log("onload");
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+            
+            function onDeviceReady() {
+                // Now safe to use device APIs
+                init();
+                alert("Alert deviceready");
+                console.log(" console deviceready");
+            }
+            
+            
+            /*jQuery( document ).bind( "pageinit", function( event, data ){
+                                    //alert("pageinit");
+                                    init();
+                                    });*/
+                                    
+        </script>
+        
+        
+        
+        
+        <title>Hello World</title>
+    </head>
+    <body onload="onLoad()">
+        <!--mainPage-->
+        <div data-role="page" id="mainPage" data-theme="a">
+        	<div data-role="header">
+                <h1>Production Schedule</h1>
+            </div>
+            <div data-role="content">
+                <div class="ui-grid-b">
+                    <div class="ui-block-a a"></div>
+                    <div class="ui-block-b b">
+                        <div><h3>Create a New Schedule</h3></div>
+                        
+                        <button id='navTOScheduleEntryPageBtn'>New Schedule</button>
+                        <div id="test"></div>
+                        <br />
+                        <div><h3>Select from the list</h3></div>
+                        <ul id="scheduleListview" data-role="listview" data-inset="true" data-filter="true"></ul>
+                    </div>
+                    <div class="ui-block-c c"></div>
+                </div> <!--end grid-->
+            </div>  <!--end content-->
+        </div>  <!--end combinationSheetPage-->
+        
+        
+        <!--scheduleEntryPage-->
+        <div data-role="page" data-theme="c" id="scheduleEntryPage">
+            <div data-role="header">
+                <a href="#mainPage" data-role="button" data-icon="arrow-l">Cancel</a>
+                <h1>Enter Schedule</h1>
+            </div>  <!--end header -->
+            <div data-role="content">
+                <div><h3>Create New Standard Work</h3></div>
+                
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a twoCol">
+                        <div data-role="fieldcontain">
+                            <label for="scheduleNameInputNew">Schedule Name:</label>
+                            <input type="text" name="scheduleNameInputNew" id="scheduleNameInputNew"/>
+                        </div>
+                        
+                        <div data-role="fieldcontain">
+                            <label for="workCenterInputNew">Work Center:</label>
+                            <input type="text" name="workCenterInputNew" id="workCenterInputNew"/>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="dailyAvailHrsInputNew">Daily Available Hrs:</label>
+                            <input type="number" name="dailyAvailHrsInputNew" id="dailyAvailHrsInputNew"/>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="startDateInputNew">Start Date:</label>
+                            <input type="date" name="startDateInputNew" id="startDateInputNew"/>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="startTimeInputNew">Start Time:</label>
+                            <input type="time" name="startTimeInputNew" id="startTimeInputNew"/>
+                        </div>
+                    </div>
+                    <div class="ui-block-b twoCol">
+                        
+                        <div data-role="fieldcontain">
+                            <label for="monDtHrsInputNew">Monday Pln DT:</label>
+                            <input type="number" name="monDtHrsInputNew" id="monDtHrsInputNew"/>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="tueDtHrsInputNew">Tuesday Pln DT:</label>
+                            <input type="number" name="tueDtHrsInputNew" id="tueDtHrsInputNew"/>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="wedDtHrsInputNew">Wednesday Pln DT:</label>
+                            <input type="number" name="wedDtHrsInputNew" id="wedDtHrsInputNew"/>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="thuDtHrsInputNew">Thursday Pln DT:</label>
+                            <input type="number" name="thuDtHrsInputNew" id="thuDtHrsInputNew"/>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="friDtHrsInputNew">Friday Pln DT:</label>
+                            <input type="number" name="friDtHrsInputNew" id="friDtHrsInputNew"/>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="satDtHrsInputNew">Saturday Pln DT:</label>
+                            <input type="number" name="satDtHrsInputNew" id="satDtHrsInputNew"/>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <br/>
+                <div class="roundedDivbox">
+                    <table data-role="table" id="newScheduleTbl" data-mode="reflow" class="ui-responsive table-stroke">
+                        <thead>
+                            <tr>
+                                <th data-priority="persist">Priority</th>
+                                <th data-priority="persist">Part Number</th>
+                                <th data-priority="persist">Work Order #</th>
+                                <th data-priority="persist">Sequence</th>
+                                <th data-priority="persist">Cube</th>
+                                <th data-priority="persist"># of Pos</th>
+                                <th data-priority="persist">Setup</th>
+                                <th data-priority="persist">Run Rate (Cut Time)</th>
+                                <th data-priority="persist">Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody id="newScheduleTblTbody">
+                            <tr class="dynRow">
+                                <td><h2>1</h2></td>
+                                <td><textarea class='materialTextarea' maxlength='155'></textarea></td>
+                                <td><textarea class='workOrderTextarea' maxlength='155'></textarea></td>
+                                <td><input class='seqInput' type='text'></input></td>
+                                <td><select class='cubeSelect' name="select-choice-1" id="select-choice-1">
+                                    <option value="Cube 1">Cube 1</option>
+                                    <option value="Cube 2">Cube 2</option>
+                                    </td></select>
+                                <td><input class='numPosInput' type='number'></input></td>
+                                <td><input class='setupInput' type='number'></input></td>
+                                <td><input class='runrateInput' type='number'></input></td>
+                                <td><input class='qtyInput' type='number'></input></td>
+                            </tr>
+                            <tr class="dynRow">
+                                <td><h2>2</h2></td>
+                                <td><textarea class='materialTextarea' maxlength='155'></textarea></td>
+                                <td><textarea class='workOrderTextarea' maxlength='155'></textarea></td>
+                                <td><input class='seqInput' type='text'></input></td>
+                                <td><select class='cubeSelect' name="select-choice-1" id="select-choice-1">
+                                    <option value="Cube 1">Cube 1</option>
+                                    <option value="Cube 2">Cube 2</option>
+                                    </td></select>
+                                <td><input class='numPosInput' type='number'></input></td>
+                                <td><input class='setupInput' type='number'></input></td>
+                                <td><input class='runrateInput' type='number'></input></td>
+                                <td><input class='qtyInput' type='number'></input></td>
+                            </tr>
+                            <tr class="dynRow">
+                                <td><h2>3</h2></td>
+                                <td><textarea class='materialTextarea' maxlength='155'></textarea></td>
+                                <td><textarea class='workOrderTextarea' maxlength='155'></textarea></td>
+                                <td><input class='seqInput' type='text'></input></td>
+                                <td><select class='cubeSelect' name="select-choice-1" id="select-choice-1">
+                                    <option value="Cube 1">Cube 1</option>
+                                    <option value="Cube 2">Cube 2</option>
+                                    </td></select>
+                                <td><input class='numPosInput' type='number'></input></td>
+                                <td><input class='setupInput' type='number'></input></td>
+                                <td><input class='runrateInput' type='number'></input></td>
+                                <td><input class='qtyInput' type='number'></input></td>
+                                
+                            </tr>
+                            <tr class="dynRow">
+                                <td><h2>4</h2></td>
+                                <td><textarea class='materialTextarea' maxlength='155'></textarea></td>
+                                <td><textarea class='workOrderTextarea' maxlength='155'></textarea></td>
+                                <td><input class='seqInput' type='text'></input></td>
+                                <td><select class='cubeSelect' name="select-choice-1" id="select-choice-1">
+                                    <option value="Cube 1">Cube 1</option>
+                                    <option value="Cube 2">Cube 2</option>
+                                    </td></select>
+                                <td><input class='numPosInput' type='number'></input></td>
+                                <td><input class='setupInput' type='number'></input></td>
+                                <td><input class='runrateInput' type='number'></input></td>
+                                <td><input class='qtyInput' type='number'></input></td>
+                            </tr>
+                            <tr class="dynRow">
+                                <td><h2>5</h2></td>
+                                <td><textarea class='materialTextarea' maxlength='155'></textarea></td>
+                                <td><textarea class='workOrderTextarea' maxlength='155'></textarea></td>
+                                <td><input class='seqInput' type='text'></input></td>
+                                <td><select class='cubeSelect' name="select-choice-1" id="select-choice-1">
+                                    <option value="Cube 1">Cube 1</option>
+                                    <option value="Cube 2">Cube 2</option>
+                                    </td></select>
+                                <td><input class='numPosInput' type='number'></input></td>
+                                <td><input class='setupInput' type='number'></input></td>
+                                <td><input class='runrateInput' type='number'></input></td>
+                                <td><input class='qtyInput' type='number'></input></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ui-grid-b">
+                        <div class="ui-block-a">
+                            <button id='newScheduleAddARowBtn'>Add a Row</button>
+                        </div>
+                        <div class="ui-block-b">
+                            <button id='newScheduleDeleteARowBtn'>Delete Last Row</button>
+                        </div>
+                        <div class="ui-block-c">
+                            <button id='newScheduleSaveBtn'>Save</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <!--table id='mondayTbl' class="heijunkaTable"><th>Monday</th></table>
+                 </br>
+                 </br>
+                 <table id='tuesdayTbl' class="heijunkaTable"><th>Tuesday</th></table>
+                 </br>
+                 </br>
+                 <table id='wednesdayTbl' class="heijunkaTable"><th>Wednesday</th></table>
+                 </br>
+                 </br>
+                 <table id='thursdayTbl' class="heijunkaTable"><th>Thursday</thn></table>
+                 </br>
+                 </br>
+                 <table id='fridayTbl' class="heijunkaTable"><th>Friday</th></table>
+                 </br>
+                 </br>
+                 <table id='saturdayTbl' class="heijunkaTable"><th>Saturday</th></table-->
+                
+                
+            </div>  <!--end content-->
+            <!--div data-role="footer">
+             <a data-role="button" id="nextBtn">Next</a>
+             </div><!-- end footer -->
+        </div>  <!--end scheduleEntryPage-->
+        
+        <!--printViewPage-->
+        <div data-role="page" id="printViewPage" data-theme="a">
+            <div data-role="header">
+                <a href="#mainPage" data-role="button" data-icon="arrow-l">Cancel</a>
+                <a href="" id="editScheduleBtn" data-role="button" data-iconpos="right" data-icon="arrow-r">Edit</a>
+                <h1>Production Schedule</h1>
+            </div>  <!--end header -->
+        	<div data-role="content">
+                <div id="printSize">
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <table class='tableCss'>
+                                <thead>
+                                    <tr>
+                                		<th data-priority="persist">Priority</th>
+                                        <th data-priority="persist">Part Number</th>
+                                        <th data-priority="persist">Work Order #</th>
+                                        <th data-priority="persist">Seq</th>
+                                        <th data-priority="persist">Cube</th>
+                                        <th data-priority="persist"># of Pos</th>
+                                		<th data-priority="persist">Setup</th>
+                                		<th data-priority="persist">Run Rate</th>
+                                		<th data-priority="persist">Qty</th>
+                                        <!--th data-priority="persist">Comments</th-->
+                           			</tr>
+                                </thead>
+                                <tbody id='scheduleListTbody'></tbody>
+                            </table>
+                            
+                        </div>
+                        <div class="ui-block-b">
+                            <h2>Work Center: <span id="workCenterLbl"/></h2>
+                            <fieldset class="ui-grid-a">
+                                <div class="ui-block-a">
+                                    <h5>Schedule Name: <span id="scheduleNameLbl"/></h5>
+                                </div>
+                                <div class="ui-block-b">
+                                    <h5>Date: <span id="dateLbl"></span> Time:<span id="timeLbl"></span></h5>
+                                </div>
+                            </fieldset>
+                            <fieldset class="ui-grid-a">
+                                <div class="ui-block-a">
+                                    <!--h4>Daily Available Hrs: <span id="dailyAvailHrsLbl"/></h4-->
+                                </div>
+                                <div class="ui-block-b">
+                                    <!--h4>Time: <span id="timeLbl"/></h4 -->
+                                </div>
+                            </fieldset>
+                            </br>
+                            
+                            <table class="tableCss">
+                                <tr><th colspan="6">Plan Downtime</th></tr>
+                                <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+                                <tr><td id="monDtTb"></td><td id="tueDtTb"></td><td id="wedDtTb"></td><td id="thuDtTb"></td><td id="friDtTb"></td><td id="satDtTb"></td></tr>			
+                            </table>
+                        </div>
+                    </fieldset>
+                    
+                    
+                    <br>
+                    
+                    <div class="dayLbl">Monday</div>
+                    <div id="monDiv"></div>
+                    <br>
+                    <br>
+                    <div class="dayLbl">Tuesday</div>
+                    <div id="tueDiv"></div>
+                    <br>
+                    <div class="dayLbl">Wednesday</div>
+                    <div id="wedDiv"></div>
+                    <br>
+                    <div class="dayLbl">Thursday</div>
+                    <div id="thuDiv"></div>
+                    <br>
+                    <div class="dayLbl">Friday</div>
+                    <div id="friDiv"></div>
+                    <br>
+                    <div class="dayLbl">Saturday</div>
+                    <div id="satDiv"></div>
+                    
+                    
+                    
+                    <!--/br>
+                     </br>
+                     <table id='mondayTbl' class="heijunkaTable"></table>
+                     </br>
+                     <h4>Tuesday</h4>
+                     <table id='tuesdayTbl' class="heijunkaTable"></table>
+                     </br>
+                     
+                     <h4>Wednesday</h4>
+                     <table id='wednesdayTbl' class="heijunkaTable"></table>
+                     </br>
+                     
+                     <h4>Thursday</h4>
+                     <table id='thursdayTbl' class="heijunkaTable"></table>
+                     </br>
+                     
+                     <h4>Friday</h4>
+                     <table id='fridayTbl' class="heijunkaTable"></table>
+                     </br>
+                     
+                     <h4>Saturday</h4>
+                     <table id='saturdayTbl' class="heijunkaTable"></table  -->  
+                    
+                </div>  <!--end printSize-->
+                <br>
+                <br>
+                <br>
+                <h5>Notes</h5>
+                <h6>Setup time for back to back jobs is 0.1 hrs as denoted by SU(0.1). No part is counted</h6>
+                <h6>A completed part is counted at the end of a full setup</h6>
+            </div>  <!--end content-->
+        </div>  <!--end printViewPage-->
+        
+        
+        
+        <script type="text/javascript" src="phonegap.js"></script>
+        <!--script type="text/javascript" src="cordova.js"></script-->
+        <!--script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script-->
+        
+        
+        <!--script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.5.1.min.js"></script-->
+        <script src="jquery/inline.js"></script>
+        <script src="jquery/heijunka.js"></script>
+    </body>
+</html>
